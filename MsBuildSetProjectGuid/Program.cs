@@ -1,9 +1,15 @@
-﻿using System;
-using System.IO;
-using System.Threading.Tasks;
+﻿// -----------------------------------------------------------------------
+// <copyright file="Program.cs" company="Ace Olszowka">
+//  Copyright (c) Ace Olszowka 2018. All rights reserved.
+// </copyright>
+// -----------------------------------------------------------------------
 
 namespace MsBuildSetProjectGuid
 {
+    using System;
+    using System.IO;
+    using System.Threading.Tasks;
+
     class Program
     {
         static void Main(string[] args)
@@ -23,10 +29,6 @@ namespace MsBuildSetProjectGuid
                 }
             }
             );
-
         }
-
-
-
     }
 }

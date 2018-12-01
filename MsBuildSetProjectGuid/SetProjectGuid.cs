@@ -1,4 +1,8 @@
-﻿
+﻿// -----------------------------------------------------------------------
+// <copyright file="SetProjectGuid.cs" company="Ace Olszowka">
+//  Copyright (c) Ace Olszowka 2018. All rights reserved.
+// </copyright>
+// -----------------------------------------------------------------------
 
 namespace MsBuildSetProjectGuid
 {

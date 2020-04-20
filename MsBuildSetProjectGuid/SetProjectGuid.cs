@@ -66,6 +66,7 @@ namespace MsBuildSetProjectGuid
                 new HashSet<string>(StringComparer.InvariantCultureIgnoreCase)
                 {
                     ".csproj",
+                    ".sqlproj",
                     ".synproj",
                     ".vbproj",
                 };

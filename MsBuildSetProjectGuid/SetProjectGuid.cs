@@ -154,7 +154,7 @@ namespace MsBuildSetProjectGuid
                 // If we got this far now bother with calculating the relative
                 // path to the project that is in question, the solution must
                 // contain a relative path to any projects its including.
-                string relativePathToProject = PathUtilities.GetRelativePath(solutionPath, targetProjectPath).ToLowerInvariant();
+                string relativePathToProject = Path.GetRelativePath(solutionPath, targetProjectPath).ToLowerInvariant();
 
                 shouldUpdateSolution = solutionContent.Contains(relativePathToProject);
             }
@@ -177,9 +177,9 @@ namespace MsBuildSetProjectGuid
                 .Where(projectReference => MSBuildUtilities.GetProjectReferenceGUID(projectReference, pathToProjectToUpdate).Equals(oldGuidClean, StringComparison.InvariantCultureIgnoreCase))
                 .Where(projectReference =>
                 {
-                    string directoryOfProject = PathUtilities.AddTrailingSlash(Path.GetDirectoryName(pathToProjectToUpdate));
+                    string directoryOfProject = Path.GetDirectoryName(pathToProjectToUpdate);
                     string prIncludeRelative = MSBuildUtilities.GetProjectReferenceIncludeValue(projectReference, pathToProjectToUpdate);
-                    string prIncludeExpanded = PathUtilities.ResolveRelativePath(directoryOfProject, prIncludeRelative);
+                    string prIncludeExpanded = Path.GetFullPath(Path.Combine(directoryOfProject, prIncludeRelative));
                     return prIncludeExpanded.Equals(pathToProjectWithNewGuid);
                 })
                 .ToArray();
